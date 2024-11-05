@@ -13,6 +13,12 @@ pipeline {
                 git url: 'https://github.com/adithya17122000/GITSession', branch: 'main'
             }
         }
+        
+        stage('Run Tests') {
+            steps {
+                sh 'pytest test_main.py'
+            }
+        }
  
  
         stage('Deploy') {
